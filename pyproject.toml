@@ -1,0 +1,47 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fastapi-example"
+authors = [
+    { name = "Author" },
+]
+description = "Example of a simple FastAPI application, with a Postgres DB in a Docker Container."
+requires-python = ">=3.11"
+version = "0.0.1"
+
+[tool.pylint]
+disable = [
+    "line-too-long",
+    "missing-module-docstring",
+    "missing-class-docstring",
+    "missing-function-docstring",
+    "too-many-arguments",
+    "too-few-public-methods",
+    "import-error",
+    "too-many-return-statements",
+    "duplicate-code",
+    "pointless-string-statement",
+    "too-many-locals"
+]
+
+[tool.mypy]
+strict = true
+show_error_codes = true
+ignore_missing_imports = true
+disallow_incomplete_defs = true
+no_implicit_optional = true
+warn_unreachable = true
+disallow_untyped_decorators = false
+
+[tool.isort]
+multi_line_output = 3
+include_trailing_comma = true
+force_grid_wrap = 3
+use_parentheses = true
+line_length = 120
+
+[tool.coverage.report]
+fail_under = 100
+exclude_lines = ["if __name__ == .__main__.:"]
